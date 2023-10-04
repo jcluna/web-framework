@@ -105,16 +105,9 @@ class Web
      */
     private function init_autoload()
     {
-        // cargar las clases principales
-        require_once CLASSES . 'Db.php';
-        require_once CLASSES . 'Model.php';
-        require_once CLASSES . 'View.php';
-        require_once CLASSES . 'Controller.php';
-
-        // cargar los controladores por defecto
-        require_once CONTROLLERS . DEFAULT_H_CONTROLLER . 'Controller.php';
-        require_once CONTROLLERS . DEFAULT_E_CONTROLLER . 'Controller.php';
-
+        // cargar e inicializar el autoloader
+        require_once CLASSES . 'Autoloader.php';
+        Autoloader::init();
         return;
     }
 

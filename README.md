@@ -7,7 +7,6 @@ Este framework será desarrollado en PHP, trabajando con POO (Programación Orie
 
 - Tecnicos
     - Crear clase para generar token de seguridad CSRF
-    - Registrar controlador y modelo principal
     - Crear clase para enviar correos de notificación
 
 - Visuales
@@ -27,6 +26,7 @@ Este framework será desarrollado en PHP, trabajando con POO (Programación Orie
     - Crear clase para redireccionar entre rutas
     - Crear clase para generar mensajes flash al usuario
     - Crear clase para realizar conexión a la base de datos
+    - Registrar controlador y modelo principal
 
 - Visuales
     - Bootstrap 5 

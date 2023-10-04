@@ -21,7 +21,7 @@ class Db
 
     /**
      * Abrir conexión a la base de datos
-     * @return void
+     * @return PDO
      */
     private function connect()
     {
@@ -46,7 +46,50 @@ class Db
      * @param array $params
      * @return void
      */
-    public static function query($sql, $params)
+    public static function query($sql, $params = [])
     {
+        $db = new self();
+        $link = $db->connect();
+        $link->beginTransaction();
+        $query = $link->prepare($sql);
+
+        if (!$query->execute($params)) {
+            $link->rollBack();
+            $error = $query->errorInfo();
+            throw new Exception($error[2]);
+        }
+
+        if (strpos($sql, 'SELECT') !== false) {
+            return $query->rowCount() > 0 ? $query->fetchAll() : false;
+        } elseif (strpos($sql, 'INSERT') !== false) {
+            $id = $link->lastInsertId();
+            if ($link->inTransaction()) {
+                $link->commit();
+            }
+            return $id;
+        } elseif (strpos($sql, 'UPDATE') !== false) {
+            if ($link->inTransaction()) {
+                $link->commit();
+            }
+            return true;
+        } elseif (strpos($sql, 'DELETE') !== false) {
+            if ($query->rowCount() > 0) {
+                if ($link->inTransaction()) {
+                    $link->commit();
+                }
+                return true;
+            }
+
+            if ($link->inTransaction()) {
+                $link->rollBack();
+            }
+            return false;
+        } else {
+            if ($link->inTransaction()) {
+                $link->commit();
+            }
+
+            return true;
+        }
     }
 }

@@ -8,5 +8,6 @@ class homeController
 
     function index()
     {
+        require_once VIEWS . 'testView.php';
     }
 }

@@ -41,6 +41,9 @@ class Web
      */
     private function init_session()
     {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
     }
 
     /**
@@ -178,5 +181,16 @@ class Web
         } else {
             call_user_func_array([$instance, $current_method], $params);
         }
+    }
+
+    /**
+     * Ejecutar Web Framework
+     * 
+     * @return void
+     */
+    public static function start()
+    {
+        $web = new self();
+        return;
     }
 }

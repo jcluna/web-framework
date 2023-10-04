@@ -6,5 +6,4 @@
 
 // cargar el archivo principal del sistema
 require_once 'app/classes/Web.php';
-
-$web = new Web;
+Web::start(); // ejecutar el framework

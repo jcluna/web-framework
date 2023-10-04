@@ -8,5 +8,6 @@ class errorController
 
     function index()
     {
+        echo '<h1>Pagina no localizada</h1>';
     }
 }

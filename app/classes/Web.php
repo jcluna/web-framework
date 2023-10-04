@@ -8,7 +8,7 @@ class Web
     // propiedades del framework
     private $framework = 'Web Framework';
     private $version = '0.1.0.0';
-    private $url = [];
+    private $uri = [];
 
     /**
      * Crear una instancia del tipo Web
@@ -18,6 +18,7 @@ class Web
     function __construct()
     {
         $this->init();
+        $this->filter_url();
     }
 
     /**
@@ -106,5 +107,20 @@ class Web
         require_once CLASSES . 'Controller.php';
 
         return;
+    }
+
+    /**
+     * Filtrar y descomponer elementos de la URI
+     * 
+     * @return array
+     */
+    private function filter_url()
+    {
+        if (isset($_GET['uri'])) {
+            $uri = filter_var($_GET['uri'], FILTER_SANITIZE_URL);
+            $this->uri = explode('/', strtolower(rtrim($uri, '/')));
+        }
+
+        return $this->uri;
     }
 }

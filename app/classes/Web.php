@@ -31,6 +31,7 @@ class Web
         $this->init_load_config();
         $this->init_load_functions();
         $this->init_autoload();
+        $this->init_csrf();
         $this->dispatch();
     }
 
@@ -109,6 +110,15 @@ class Web
         require_once CLASSES . 'Autoloader.php';
         Autoloader::init();
         return;
+    }
+
+    /**
+     * Crear un nuevo token para la sesión del usuario
+     * @return void
+     */
+    private function init_csrf()
+    {
+        $csrf = new Csrf();
     }
 
     /**

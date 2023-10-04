@@ -43,3 +43,21 @@ define('IMAGES', ASSETS.'images/');
 define('JS', ASSETS.'js/');
 define('PLUGINS', ASSETS.'plugins/');
 define('UPLOADS', ASSETS.'uploads/');
+
+// definir credenciales de la base de datos
+
+// -- BASE DE DATOS LOCAL - DESARROLLO
+define('LDB_ENGINE', 'mysql');
+define('LDB_HOST', 'localhost');
+define('LDB_NAME', 'web');
+define('LDB_USR', 'root');
+define('LDB_PWD', '');
+define('LDB_CHARSET', 'utf8');
+
+// -- BASE DE DATOS REMOTA - PRODUCCIÓN
+define('DB_ENGINE', 'mysql');
+define('DB_HOST', 'localhost');
+define('DB_NAME', '__remote_db__');
+define('DB_USR', '__remote_db__');
+define('DB_PWD', '__remote_db__');
+define('DB_CHARSET', '__remote_db__');

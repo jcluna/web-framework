@@ -6,7 +6,6 @@ Este framework será desarrollado en PHP, trabajando con POO (Programación Orie
 ## Plan de Implementación
 
 - Tecnicos
-    - Crear clase para redireccionar entre rutas
     - Crear clase para generar mensajes flash al usuario
     - Crear clase para generar token de seguridad CSRF
     - Registrar controlador y modelo principal
@@ -28,6 +27,7 @@ Este framework será desarrollado en PHP, trabajando con POO (Programación Orie
     - Crear clase para manejar vistas y renderizarlas
     - Crear clase para autocargar archivos y clases requeridas
     - Crear archivo de funciones independiente
+    - Crear clase para redireccionar entre rutas
 
 - Visuales
     - Bootstrap 5 

@@ -54,6 +54,52 @@ class Web
 
         // cargar el archivo de configuración
         require_once $file;
+
+        return;
+    }
+
+    /**
+     * Cargar todas las funciones del sistema (core) y del usuario (custom)
+     * 
+     * @return void
+     */
+    private function init_load_functions()
+    {
+        $core = 'web_core.php';
+        $custom = 'web_custom.php';
+
+        // validar la existencia del archivo de funciones core
+        $file = FUNCTIONS . $core;
+        if (!is_file($file)) {
+            die(sprintf('El archivo %s no existe, y es necesario para que %s funcione.', $core, $this->framework));
+        }
+
+        // cargar las funciones core
+        require_once $file;
+
+        // validar la existencia del archivo de funciones custom
+        $file = FUNCTIONS . $custom;
+        if (!is_file($file)) {
+            die(sprintf('El archivo %s no existe, y es necesario para que %s funcione.', $core, $this->framework));
+        }
+
+        // cargar las funciones custom
+        require_once $file;
+
+        return;
+    }
+
+    /**
+     * Cargar todos los archivos de forma automática
+     * 
+     * @return void
+     */
+    private function init_autoload()
+    {
+        require_once CLASSES . 'Db.php';
+        require_once CLASSES . 'Model.php';
+        require_once CLASSES . 'Controller.php';
+
         return;
     }
 }

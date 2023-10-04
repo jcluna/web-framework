@@ -57,7 +57,7 @@ define('LDB_HOST', 'localhost');
 define('LDB_NAME', 'web');
 define('LDB_USR', 'root');
 define('LDB_PWD', '');
-define('LDB_CHARSET', 'utf8');
+define('LDB_CHARSET', 'latin1');
 
 // -- BASE DE DATOS REMOTA - PRODUCCIÓN
 define('DB_ENGINE', 'mysql');

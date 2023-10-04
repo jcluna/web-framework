@@ -15,6 +15,11 @@ class homeController
         View::render('web', $data);
     }
 
+    function test()
+    {
+        View::render('test');
+    }
+
     function flash()
     {
         Flasher::success('El usuario ha sido agregado con éxito');

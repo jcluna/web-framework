@@ -17,6 +17,7 @@ class Web
      */
     function __construct()
     {
+        $this->init();
     }
 
     /**
@@ -26,6 +27,10 @@ class Web
      */
     private function init()
     {
+        $this->init_session();
+        $this->init_load_config();
+        $this->init_load_functions();
+        $this->init_autoload();
     }
 
     /**

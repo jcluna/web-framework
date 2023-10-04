@@ -6,29 +6,30 @@ Este framework será desarrollado en PHP, trabajando con POO (Programación Orie
 ## Plan de Implementación
 
 - Tecnicos
-    - Contar con un archivo de configuración principal
-    - Contar con un archivo de configuración para la base de datos
-    - Todas las peticiones llegaran a index.php
-    - Crear clase para manejar vistas y renderizarlas
-    - Crear clase para autocargar archivos y clases requeridas
     - Crear clase para redireccionar entre rutas
-    - Crear archivo de funciones independiente
     - Crear clase para generar mensajes flash al usuario
     - Crear clase para generar token de seguridad CSRF
     - Registrar controlador y modelo principal
     - Crear clase para realizar conexión a la base de datos
     - Crear clase para enviar correos de notificación
-    - Crear clase principal para iniciar una instancia del sistema
 
 - Visuales
-    - Bootstrap 5
     - WaitMe
     - Notify o Toastr para notificación tipo toast
-    - FontAwesome 5
     - Diseño simple y sencillo
     - Logotipo y colores de identidad
-    - Requiere de una vista inicial para el sistema y una vista de error
 
 ## Plan Implementado
+- Tecnicos
+    - Contar con un archivo de configuración principal (web_config.php)
+    - Contar con un archivo de configuración para la base de datos (web_config.php)
+    - Todas las peticiones llegaran a index.php
+    - Crear clase principal para iniciar una instancia del sistema
+    - Crear clase para manejar vistas y renderizarlas
+    - Crear clase para autocargar archivos y clases requeridas
+    - Crear archivo de funciones independiente
 
-- Pendiente
+- Visuales
+    - Bootstrap 5 
+    - FontAwesome 5 (uso de versión 6.*)
+    - Requiere de una vista inicial para el sistema y una vista de error

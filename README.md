@@ -15,7 +15,6 @@ Este framework será desarrollado en PHP, trabajando con POO (Programación Orie
 - Visuales
     - WaitMe
     - Notify o Toastr para notificación tipo toast
-    - Diseño simple y sencillo
     - Logotipo y colores de identidad
 
 ## Plan Implementado
@@ -33,3 +32,4 @@ Este framework será desarrollado en PHP, trabajando con POO (Programación Orie
     - Bootstrap 5 
     - FontAwesome 5 (uso de versión 6.*)
     - Requiere de una vista inicial para el sistema y una vista de error
+    - Diseño simple y sencillo

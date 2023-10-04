@@ -9,7 +9,7 @@ class errorController
     function index()
     {
         $data = [
-            'title' => 'Página no encontrada'
+            'title' => '404 Not Found'
         ];
         View::render('404', $data);
     }

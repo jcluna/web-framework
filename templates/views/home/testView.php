@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php require_once INCLUDES . 'header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Framework</title>
-</head>
-
-<body>
+<div class="container">
     <h1>Vista de prueba</h1>
     <h3><?php echo sprintf('El titulo del producto es %s y su ID es %s', $d->titulo, $d->id); ?></h3>
-</body>
+</div>
 
-</html>
+<?php require_once INCLUDES . 'footer.php'; ?>

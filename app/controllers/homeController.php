@@ -9,7 +9,7 @@ class homeController
     function index()
     {
         $data = [
-            'title' => 'Web Framework'
+            'title' => 'Home'
         ];
 
         View::render('web', $data);

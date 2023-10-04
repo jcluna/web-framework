@@ -8,6 +8,9 @@ class errorController
 
     function index()
     {
-        echo '<h1>Pagina no localizada</h1>';
+        $data = [
+            'title' => 'Página no encontrada'
+        ];
+        View::render('404', $data);
     }
 }

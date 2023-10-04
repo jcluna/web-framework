@@ -9,10 +9,9 @@ class homeController
     function index()
     {
         $data = [
-            'id' => 1,
-            'titulo' => 'Una página'
+            'title' => 'Web Framework'
         ];
 
-        View::render('test', $data);
+        View::render('web', $data);
     }
 }

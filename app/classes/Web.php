@@ -108,6 +108,7 @@ class Web
         // cargar las clases principales
         require_once CLASSES . 'Db.php';
         require_once CLASSES . 'Model.php';
+        require_once CLASSES . 'View.php';
         require_once CLASSES . 'Controller.php';
 
         // cargar los controladores por defecto
@@ -155,6 +156,7 @@ class Web
         if (!class_exists($controller)) {
             // no existe el controlador, se utiliza el controlador de error
             $controller = DEFAULT_E_CONTROLLER . 'Controller';
+            $current_controller = DEFAULT_E_CONTROLLER;
         }
 
         // -- recuperar el nombre del metodo
@@ -165,11 +167,16 @@ class Web
             // validar la existencia del metodo en el controlador
             if (!method_exists($controller, $current_method)) {
                 $controller = DEFAULT_E_CONTROLLER . 'Controller';
+                $current_controller = DEFAULT_E_CONTROLLER;
                 $current_method = DEFAULT_METHOD;
             }
         } else {
             $current_method = DEFAULT_METHOD;
         }
+
+        // -- crear constantes para el controlador y el metodo
+        define('CONTROLLER', $current_controller);
+        define('METHOD', $current_method);
 
         // -- recuperar los parametros despues del controlador y el metodo
         $params = array_values(empty($this->uri) ? [] : $this->uri);

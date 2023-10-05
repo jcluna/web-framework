@@ -6,8 +6,8 @@
 class Web
 {
     // propiedades del framework
-    private $framework = 'Web Framework';
-    private $version = '0.1.0.0';
+    private static $framework = 'Web Framework';
+    private static $version = '1.0.0.0';
     private $uri = [];
 
     /**
@@ -18,6 +18,24 @@ class Web
     function __construct()
     {
         $this->init();
+    }
+
+    /**
+     * Recuperar el nombre del framework
+     * @return string
+     */
+    public static function get_name()
+    {
+        return self::$framework;
+    }
+
+    /**
+     * Recuperar la versión del framework
+     * @return string
+     */
+    public static function get_version()
+    {
+        return self::$version;
     }
 
     /**
@@ -59,7 +77,7 @@ class Web
 
         // validar la existencia del archivo de configuración
         if (!is_file($file)) {
-            die(sprintf('El archivo %s no existe, y es necesario para que %s funcione.', $config, $this->framework));
+            die(sprintf('El archivo [%s] no existe, y es necesario para que %s funcione.', $config, self::$framework));
         }
 
         // cargar el archivo de configuración
@@ -81,7 +99,7 @@ class Web
         // validar la existencia del archivo de funciones core
         $file = FUNCTIONS . $core;
         if (!is_file($file)) {
-            die(sprintf('El archivo %s no existe, y es necesario para que %s funcione.', $core, $this->framework));
+            die(sprintf('El archivo [%s] no existe, y es necesario para que %s funcione.', $core, self::$framework));
         }
 
         // cargar las funciones core
@@ -90,7 +108,7 @@ class Web
         // validar la existencia del archivo de funciones custom
         $file = FUNCTIONS . $custom;
         if (!is_file($file)) {
-            die(sprintf('El archivo %s no existe, y es necesario para que %s funcione.', $core, $this->framework));
+            die(sprintf('El archivo %s no existe, y es necesario para que %s funcione.', $core, self::$framework));
         }
 
         // cargar las funciones custom
